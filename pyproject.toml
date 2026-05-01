@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rideforge"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.11"
+dependencies = [
+    "langchain",
+    "langchain-ollama",
+    "langchain-community",
+    "langgraph",
+    "langsmith",
+    "langchain-mcp-adapters",
+    "mcp",
+    "faiss-cpu",
+    "requests",
+    "typer",
+    "fastapi",
+    "uvicorn",
+]
+
+[project.scripts]
+rideforge = "rideforge.cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "httpx",
+]

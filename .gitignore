@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# RideForge
+docs/langsmith_screenshots/
+data/

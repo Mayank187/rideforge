@@ -5,8 +5,8 @@ from pydantic import Field
 class Settings(BaseSettings):
     # --- Ollama ---
     ollama_base_url: str = "http://localhost:11434"
-    chat_model: str = "qwen2.5:3b"
-    vision_model: str = "qwen2.5:3b"
+    chat_model: str = "gemma4:e2b"
+    vision_model: str = "gemma4:e2b"
     embed_model: str = "nomic-embed-text"
 
     # --- Temperatures ---
@@ -16,10 +16,10 @@ class Settings(BaseSettings):
     supervisor_temperature: float = 0.0   # deterministic routing
 
     # --- LangSmith ---
-    langsmith_tracing: bool = Field(default=False, alias="LANGCHAIN_TRACING_V2")
-    langsmith_endpoint: str = "https://api.smith.langchain.com"
-    langsmith_project: str = "rideforge"
-    langsmith_api_key: str = Field(default="", alias="LANGCHAIN_API_KEY")
+    langsmith_tracing: bool = Field(default=False, alias="LANGSMITH_TRACING")
+    langsmith_endpoint: str = Field(default="https://api.smith.langchain.com", alias="LANGSMITH_ENDPOINT")
+    langsmith_project: str = Field(default="rideforge", alias="LANGSMITH_PROJECT")
+    langsmith_api_key: str = Field(default="", alias="LANGSMITH_API_KEY")
 
     # --- External APIs ---
     openweather_api_key: str = Field(default="", alias="OPENWEATHER_API_KEY")
